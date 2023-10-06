@@ -6,7 +6,6 @@
 }
 
 body {
-    display: flex;
     height: 100vh;
     margin: 0;
     font-family: Merriweather Sans;
@@ -14,12 +13,22 @@ body {
     color: var(--text-color);
 }
 
+main{
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    height: 30px;
+    text-align: center;
+}
+
 .card{
     background: var(--bg-cards);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.20);
     border-radius: 20px;
     width: 348px;
-    margin: 10px;
+    margin: 15px;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -144,12 +153,13 @@ body {
 #cartao-projeto{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 461px;
-    height: 186px;
+    height: 220px;
     flex-shrink: 0;
     padding: 30px;
     box-sizing: border-box;
+    margin: 15px 0px;
 }
 
 #projeto-titulo{
@@ -191,7 +201,10 @@ body {
 
 #cartoes-projeto{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    width: 952px;
+    margin: 15px;
 }
 
 #cartoes-projeto a{
