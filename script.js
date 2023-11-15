@@ -9,7 +9,9 @@ function getApiGitHub(){
     var data = await res.json();
 
     data.map( item => {
+      
       let project = document.createElement('div');
+      let descricao = (description != nil ? item.description : ''); 
 
       project.innerHTML = `
         <div id="cartao-projeto" class="card">
@@ -20,7 +22,7 @@ function getApiGitHub(){
             </div>
             <div class="data">${ Intl.DateTimeFormat('pt-BR').format(new Date(item.created_at))}</div>
           </div>
-          <p>${item.description}</p>
+          <p>${descricao}</p>
           <div id="cartao-projeto-info">
               <div id="cartao-projeto-info-icon">
                   <img src="./assets/star.svg"/> 
