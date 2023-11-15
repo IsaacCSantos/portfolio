@@ -9,9 +9,18 @@ function getApiGitHub(){
     var data = await res.json();
 
     data.map( item => {
-      
+
       let project = document.createElement('div');
-      let descricao = (description != nil ? item.description : ''); 
+      let descricao = item.description !== null && item.description !== undefined ? item.description : '';
+      let language = '';
+      
+      if (item.language !== null && item.language !== undefined){
+        language = 
+          `<div id="linguagem">
+          <img class="circle" src="./assets/Ellipse 2.svg"/>
+          <p>${item.language}</p>
+          </div>`
+      }
 
       project.innerHTML = `
         <div id="cartao-projeto" class="card">
@@ -30,10 +39,7 @@ function getApiGitHub(){
                   <img src="./assets/git-branch.svg"/> 
                   <p>${item.forks_count}</p>
               </div>
-              <div id="linguagem">
-                  <img class="circle" src="./assets/Ellipse 2.svg"/>
-                  <p>${item.language}</p>
-              </div>
+              ${language}
           </div>
         </div>
       `
